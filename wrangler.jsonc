@@ -1,0 +1,30 @@
+{
+  "name": "fliq-water-frontend",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-04-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "NEXT_PUBLIC_APP_URL": "https://fliq-water-frontend.neerbottle.workers.dev/",
+    "NEXT_PUBLIC_API_URL": "https://neerbottle-backend.neerbottle.workers.dev/api",
+    "AUTH_URL": "https://fliq-water-frontend.neerbottle.workers.dev/"
+  },
+  "observability": {
+    "enabled": false,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": false,
+      "persist": true,
+      "head_sampling_rate": 1
+    }
+  }
+}
