@@ -9,6 +9,7 @@ export const APP_CONFIG = {
 export const API_ENDPOINTS = {
   auth: {
     register: "/api/auth/register",
+    sendLoginOtp: "/api/auth/send-login-otp",
     login: "/api/auth/login",
     refresh: "/api/auth/refresh",
     logout: "/api/auth/logout",

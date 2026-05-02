@@ -117,22 +117,13 @@ export function MobileNav({ isAuthenticated, signOut, user, orderCount }: Mobile
                 <span className="text-destructive text-[15px] font-medium">Logout</span>
               </button>
             ) : (
-              <div className="flex flex-col gap-2">
-                <Link
-                  href="/auth/login"
-                  onClick={() => setOpen(false)}
-                  className="bg-foreground text-background hover:opacity-90 active:opacity-80 flex h-11 items-center justify-center rounded-[10px] text-[14px] font-medium transition-opacity"
-                >
-                  Login
-                </Link>
-                <Link
-                  href="/auth/register"
-                  onClick={() => setOpen(false)}
-                  className="border-border/50 hover:bg-muted flex h-11 items-center justify-center rounded-[10px] border text-[14px] font-medium transition-colors"
-                >
-                  Create account
-                </Link>
-              </div>
+              <Link
+                href="/auth/login"
+                onClick={() => setOpen(false)}
+                className="bg-foreground text-background hover:opacity-90 active:opacity-80 flex h-11 items-center justify-center rounded-[10px] text-[14px] font-medium transition-opacity"
+              >
+                Login
+              </Link>
             )}
           </div>
         </SheetContent>

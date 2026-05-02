@@ -12,6 +12,7 @@ import {
   refreshRequestSchema,
   registerStepOneSchema,
   registerStepTwoSchema,
+  sendLoginOtpSchema,
 } from "@/features/auth/schemas";
 
 export async function registerStepOne(input: unknown) {
@@ -38,6 +39,18 @@ export async function loginWithPassword(input: unknown) {
   return session;
 }
 
+/** Step 1 of OTP login: POST /api/auth/send-login-otp with { phone } → SMS */
+export async function sendLoginOtp(input: unknown) {
+  const payload = sendLoginOtpSchema.parse(input);
+  const response = await api.post(API_ENDPOINTS.auth.sendLoginOtp, payload);
+  try {
+    return toOtpSentResponse(response.data);
+  } catch {
+    return { sent: true, message: "OTP sent to your phone." };
+  }
+}
+
+/** Step 2 of OTP login: POST /api/auth/login with { phone, otp } */
 export async function loginWithOtp(input: unknown) {
   const payload = loginWithOtpSchema.parse(input);
   const response = await api.post(API_ENDPOINTS.auth.login, payload);

@@ -18,6 +18,10 @@ export const loginWithPasswordSchema = z.object({
   password: z.string().min(6),
 });
 
+export const sendLoginOtpSchema = z.object({
+  phone: phoneSchema,
+});
+
 export const loginWithOtpSchema = z.object({
   phone: phoneSchema,
   otp: otpSchema,

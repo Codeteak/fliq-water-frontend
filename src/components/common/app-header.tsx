@@ -207,9 +207,6 @@ export function AppHeader() {
               <Link href="/auth/login">
                 <Button variant="ghost">Login</Button>
               </Link>
-              <Link href="/auth/register">
-                <Button variant="outline">Register</Button>
-              </Link>
             </>
           )}
         </nav>
